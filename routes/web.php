@@ -36,6 +36,7 @@ Route::group(['middleware'=> 'admin'], function(){
 
     //Home
     Route::get('admin/home', [HomeController::class, 'admin_home']);
+    //Insert
     Route::post('admin/home/post', [HomeController::class, 'admin_home_post']);
 
 
