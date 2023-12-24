@@ -41,16 +41,16 @@
       <div class="row">
         <div class="col-md-8 col-sm-12">
           <div class="banner-text">
-            <h2 class="white">Best App Website Template</h2>
-            <h6 class="white">This awesome template designed by <a href="http://w3Template.com" target="_blank" rel="dofollow" class="weblink">W3 Template</a>.</h6>
-            <p class="banner-text white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit neque massa, sit amet tristique ante porta ut. In sodales et justo vel vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <h2 class="white"> {{ @$getRecord[0]->title }} </h2>
+            <h6 class="white"> {{ @$getRecord[0]->sub_title }} <a href="{{ @$getRecord[0]->home_url }}" target="_blank" rel="dofollow" class="weblink"> {{ @$getRecord[0]->sub_title_two }} </a>.</h6>
+            <p class="banner-text white"> {{ @$getRecord[0]->description }}</p>
             <ul>
-              <li><a href="#"><img src=" {{ url('frontend/images/appstore.png')}} " class="wow fadeInUp" data-wow-delay="0.4s"/></a></li>
-              <li><a href="#"><img src=" {{ url('frontend/images/playstore.png')}} " class="wow fadeInUp" data-wow-delay="0.7s"/></a></li>
+              <li><a href="#"><img src=" {{ url('public/img/'.@$getRecord[0]->image_one )}} " class="wow fadeInUp" data-wow-delay="0.4s"/></a></li>
+              <li><a href="#"><img src=" {{ url('public/img/'.@$getRecord[0]->image_two )}}" class="wow fadeInUp" data-wow-delay="0.7s"/></a></li>
             </ul>
           </div>
         </div>
-        <div class="col-md-4 col-sm-12"> <img src=" {{ url('frontend/images/iphone-screen.png')}} " class="img-fluid wow fadeInUp"/> </div>
+        <div class="col-md-4 col-sm-12"> <img src=" {{ url('public/img/'.@$getRecord[0]->image_three )}}"  class="img-fluid wow fadeInUp"/> </div>
       </div>
     </div>
   </div>
