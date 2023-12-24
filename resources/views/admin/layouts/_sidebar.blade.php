@@ -79,6 +79,15 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{ url('admin/about')}}" class="nav-link  @if(Request::segment(2) == 'about') active @endif ">
+              <p>
+                About
+              </p>
+              <i class="nav-icon fas fa-info-circle"></i>
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ url('admin/my_account')}}" class="nav-link  @if(Request::segment(2) == 'my_account') active @endif ">

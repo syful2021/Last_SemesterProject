@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MyAccountController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,9 @@ Route::group(['middleware'=> 'admin'], function(){
     Route::get('admin/home', [HomeController::class, 'admin_home']);
     //Insert
     Route::post('admin/home/post', [HomeController::class, 'admin_home_post']);
+    // About
+    Route::get('admin/about', [AboutController::class, 'admin_about']);
+    Route::post('admin/about/post', [AboutController::class, 'admin_about_post']);
 
 
     Route::get('admin/my_account', [MyAccountController::class, 'my_account']);
