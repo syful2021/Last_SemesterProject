@@ -44,7 +44,7 @@
                                     </label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" name="title" class="form-control" placeholder="Enter title" value="" required>
+                                        <input type="text" name="title" class="form-control" placeholder="Enter title" value="{{ @$getRecord[0]->title }}" required>
 
                                         <span style="color: red"> {{ $errors->first('title')}} </span>
                                     </div>
@@ -54,7 +54,7 @@
                                     <label class="col-sm-2 col-form-label">Description</label>
 
                                     <div class="col-sm-10">
-                                        <textarea type="text" name="description" class="form-control" placeholder="Enter Descriptin"  >  </textarea>
+                                        <textarea type="text" name="description" class="form-control" placeholder="Enter Descriptin"  > {{ @$getRecord[0]->description }} </textarea>
                                         <span style="color: red"> {{ $errors->first('description')}} </span>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                     </label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_one" class="form-control" placeholder="Enter title One" value="" required>
+                                        <input type="text" name="title_one" class="form-control" placeholder="Enter title One" value="{{ @$getRecord[0]->title_one }}" required>
 
                                         <span style="color: red"> {{ $errors->first('title_one')}} </span>
                                     </div>
@@ -75,7 +75,7 @@
                                     <label class="col-sm-2 col-form-label">Description One</label>
 
                                     <div class="col-sm-10">
-                                        <textarea type="text" name="description_one" class="form-control" placeholder="Enter Descriptin One"  >  </textarea>
+                                        <textarea type="text" name="description_one" class="form-control" placeholder="Enter Descriptin One"  > {{ @$getRecord[0]->description_one }} </textarea>
                                         <span style="color: red"> {{ $errors->first('description_one')}} </span>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                                     </label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_two" class="form-control" placeholder="Enter title Two" value="" required>
+                                        <input type="text" name="title_two" class="form-control" placeholder="Enter title Two" value="{{ @$getRecord[0]->title_two }}" required>
 
                                         <span style="color: red"> {{ $errors->first('title_two')}} </span>
                                     </div>
@@ -95,7 +95,7 @@
                                     <label class="col-sm-2 col-form-label">Description Two</label>
 
                                     <div class="col-sm-10">
-                                        <textarea type="text" name="description_two" class="form-control" placeholder="Enter Descriptin One"  >  </textarea>
+                                        <textarea type="text" name="description_two" class="form-control" placeholder="Enter Descriptin One"  > {{ @$getRecord[0]->description_two }} </textarea>
                                         <span style="color: red"> {{ $errors->first('description_two')}} </span>
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@
                                     </label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_three" class="form-control" placeholder="Enter title Three " value="" required>
+                                        <input type="text" name="title_three" class="form-control" placeholder="Enter title Three " value="{{ @$getRecord[0]->title_three }}" required>
 
                                         <span style="color: red"> {{ $errors->first('title_three')}} </span>
                                     </div>
@@ -115,16 +115,18 @@
                                     <label class="col-sm-2 col-form-label">Description Three</label>
 
                                     <div class="col-sm-10">
-                                        <textarea type="text" name="description_three" class="form-control" placeholder="Enter Descriptin One"  >  </textarea>
+                                        <textarea type="text" name="description_three" class="form-control" placeholder="Enter Descriptin One"  > {{ @$getRecord[0]->description_three }} </textarea>
                                         <span style="color: red"> {{ $errors->first('description_three')}} </span>
                                     </div>
                                 </div>
+
+                                <input type="hidden" name="id" value="{{ @$getRecord[0]->id }}">
 
                             </div>
 
                             <div class="card-footer">
 
-                                <button type="submit" class="btn btn-primary"> Submit </button>
+                                <button type="submit" name="add_to_update" class="btn btn-primary" value="@if (count($getRecord)>0 ) Update @else Add @endif" > @if (count($getRecord)>0 ) Update @else Add @endif </button>
                                 <a href="" class="btn btn-default float-right"> Cancel</a>
                             </div>
                         </form>

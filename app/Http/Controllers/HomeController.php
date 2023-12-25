@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeModel;
+use App\Models\AboutModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Str;
@@ -12,6 +13,7 @@ class HomeController extends Controller
     public function index(){
 
         $data['getRecord'] = HomeModel::all();
+        $data['getAbout'] = AboutModel::all();
 
        return view('index', $data);
     }

@@ -11,14 +11,24 @@ class AboutController extends Controller
 {
     public function admin_about(Request $request)
     {
-        return view('admin.about.list');
+        $data['getRecord'] = AboutModel::all();
+        return view('admin.about.list', $data );
     }
 
     public function admin_about_post(Request $request)
     {
         //dd($request->all());
 
+        if($request->admin_about_post == 'Add')
+        {
         $insertRecord = new AboutModel;
+
+        }else{
+
+        $insertRecord = AboutModel::find($request->id)  ;
+
+        }
+
 
         $insertRecord->title             = trim($request->title);
         $insertRecord->description       = trim($request->description);

@@ -65,28 +65,28 @@
     <div class="row">
       <div class="col-md-12">
         <div class="sectioner-header text-center">
-          <h3>About</h3>
+          <h3> {{ @$getAbout[0]->title }}</h3>
           <span class="line"></span>
-          <p>Sed quis nisi nisi. Proin consectetur porttitor dui sit amet viverra. Fusce sit amet lorem faucibus, vestibulum ante in, pharetra ante.</p>
+          <p> {{ @$getAbout[0]->description }} </p>
         </div>
         <div class="section-content text-center">
           <div class="row">
             <div class="col-md-4">
               <div class="icon-box wow fadeInUp" data-wow-delay="0.2s"> <i class="fa fa-life-ring" aria-hidden="true"></i>
-                <h5>Support</h5>
-                <p>Phasellus lobortis justo a magna facilisis, in commodo tellus rutrum. Sed vitae condimentum nulla.</p>
+                <h5> {{ @$getAbout[0]->title_one }}</h5>
+                <p> {{ @$getAbout[0]->description_one }} </p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="icon-box wow fadeInUp" data-wow-delay="0.4s"> <i class="fa fa-mobile" aria-hidden="true"></i>
-                <h5>Cross Platform</h5>
-                <p>Phasellus lobortis justo a magna facilisis, in commodo tellus rutrum. Sed vitae condimentum nulla.</p>
+                <h5> {{ @$getAbout[0]->title_two }} </h5>
+                <p> {{ @$getAbout[0]->description_two }} </p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="icon-box wow fadeInUp" data-wow-delay="0.6s"> <i class="fa fa-bolt" aria-hidden="true"></i>
-                <h5>Fast</h5>
-                <p>Phasellus lobortis justo a magna facilisis, in commodo tellus rutrum. Sed vitae condimentum nulla.</p>
+                <h5> {{ @$getAbout[0]->title_three }} </h5>
+                <p>{{ @$getAbout[0]->description_three }} </p>
               </div>
             </div>
           </div>
