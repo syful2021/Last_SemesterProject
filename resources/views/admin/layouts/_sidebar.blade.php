@@ -62,49 +62,66 @@
 
           <li class="nav-item">
             <a href="{{ url('admin/dashboard')}}" class="nav-link  @if(Request::segment(2) == 'dashboard') active @endif ">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+
               <p>
                 Dashboard
               </p>
-              <i class="nav-icon fas fa-tachometer-alt"></i>
             </a>
           </li>
 
-
+          {{-- Home sidevar  --}}
           <li class="nav-item">
             <a href="{{ url('admin/home')}}" class="nav-link  @if(Request::segment(2) == 'home') active @endif ">
+              <i class="nav-icon fas fa-home"></i>
+
               <p>
                 Home
               </p>
-              <i class="nav-icon fas fa-home"></i>
             </a>
           </li>
 
+          {{-- About sidevar --}}
           <li class="nav-item">
             <a href="{{ url('admin/about')}}" class="nav-link  @if(Request::segment(2) == 'about') active @endif ">
+              <i class="nav-icon fas fa-info-circle"></i>
+
               <p>
                 About
               </p>
-              <i class="nav-icon fas fa-info-circle"></i>
+            </a>
+          </li>
+
+          {{-- Watch now Sidevar --}}
+          <li class="nav-item">
+            <a href="{{ url('admin/watch_now')}}" class="nav-link  @if(Request::segment(2) == 'watch_now') active @endif ">
+                <i class="nav-icon fas fa-video"></i>
+              <p>
+                Watch now
+              </p>
+
             </a>
           </li>
 
 
           <li class="nav-item">
             <a href="{{ url('admin/my_account')}}" class="nav-link  @if(Request::segment(2) == 'my_account') active @endif ">
+              <i class="nav-icon fas fa-user"></i>
+
               <p>
                 My Account
               </p>
-              <i class="nav-icon fas fa-user"></i>
             </a>
           </li>
 
 
           <li class="nav-item">
             <a href="{{ url('logout')}}" class="nav-link ">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+
               <p>
                 Logout
               </p>
-              <i class="nav-icon fas fa-sign-out-alt"></i>
             </a>
           </li>
 

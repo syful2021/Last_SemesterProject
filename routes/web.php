@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\WatchNowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,10 @@ Route::group(['middleware'=> 'admin'], function(){
     // About
     Route::get('admin/about', [AboutController::class, 'admin_about']);
     Route::post('admin/about/post', [AboutController::class, 'admin_about_post']);
+
+    // watch now Video
+    Route::get('admin/watch_now', [WatchNowController::class, 'admin_watch_now']);
+    Route::post('admin/watch_now/post', [WatchNowController::class, 'watch_now_post']);
 
 
     Route::get('admin/my_account', [MyAccountController::class, 'my_account']);

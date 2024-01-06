@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HomeModel;
 use App\Models\AboutModel;
+use App\Models\WatchNowModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Str;
@@ -14,6 +15,7 @@ class HomeController extends Controller
 
         $data['getRecord'] = HomeModel::all();
         $data['getAbout'] = AboutModel::all();
+        $data['getWatchNow'] = WatchNowModel::all();
 
        return view('index', $data);
     }
