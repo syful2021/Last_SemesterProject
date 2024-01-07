@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WatchNowController;
+use App\Http\Controllers\FeaturesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::group(['middleware'=> 'admin'], function(){
     Route::get('admin/home', [HomeController::class, 'admin_home']);
     //Insert
     Route::post('admin/home/post', [HomeController::class, 'admin_home_post']);
+
     // About
     Route::get('admin/about', [AboutController::class, 'admin_about']);
     Route::post('admin/about/post', [AboutController::class, 'admin_about_post']);
@@ -48,6 +50,9 @@ Route::group(['middleware'=> 'admin'], function(){
     Route::get('admin/watch_now', [WatchNowController::class, 'admin_watch_now']);
     Route::post('admin/watch_now/post', [WatchNowController::class, 'watch_now_post']);
 
+    // Features
+    Route::get('admin/features', [FeaturesController::class, 'features_list']);
+    Route::post('admin/features/post', [FeaturesController::class, 'features_post']);
 
     Route::get('admin/my_account', [MyAccountController::class, 'my_account']);
     Route::post('admin/my_account/update', [MyAccountController::class, 'my_account_update']);

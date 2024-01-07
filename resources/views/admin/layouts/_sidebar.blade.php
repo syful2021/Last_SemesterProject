@@ -103,6 +103,17 @@
             </a>
           </li>
 
+          {{-- Features  --}}
+          <li class="nav-item">
+            <a href="{{ url('admin/features')}}" class="nav-link  @if(Request::segment(2) == 'features') active @endif ">
+                <i class="nav-icon fas fa-key"></i>
+              <p>
+                Features
+              </p>
+
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ url('admin/my_account')}}" class="nav-link  @if(Request::segment(2) == 'my_account') active @endif ">
