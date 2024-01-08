@@ -8,6 +8,7 @@ use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WatchNowController;
 use App\Http\Controllers\FeaturesController;
+use App\Http\Controllers\OurTeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,10 @@ Route::group(['middleware'=> 'admin'], function(){
     // Features
     Route::get('admin/features', [FeaturesController::class, 'features_list']);
     Route::post('admin/features/post', [FeaturesController::class, 'features_post']);
+
+    // Our Team
+    Route::get('admin/our_team', [OurTeamController::class, 'our_team_list']);
+    Route::post('admin/our_team/post', [OurTeamController::class, 'our_team_post']);
 
     Route::get('admin/my_account', [MyAccountController::class, 'my_account']);
     Route::post('admin/my_account/update', [MyAccountController::class, 'my_account_update']);

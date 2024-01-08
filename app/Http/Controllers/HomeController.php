@@ -7,6 +7,7 @@ use App\Models\AboutModel;
 use App\Models\WatchNowModel;
 use App\Http\Controllers\Controller;
 use App\Models\FeaturesModel;
+use App\Models\OurTeamModel;
 use Illuminate\Http\Request;
 use Str;
 
@@ -20,6 +21,7 @@ class HomeController extends Controller
         $data['getAbout'] = AboutModel::all();
         $data['getWatchNow'] = WatchNowModel::all();
         $data['getFeatures'] = FeaturesModel::all();
+        $data['getOurTeam'] = OurTeamModel::all();
 
        return view('index', $data);
     }

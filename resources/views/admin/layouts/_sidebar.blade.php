@@ -114,6 +114,17 @@
             </a>
           </li>
 
+          {{-- Our Team --}}
+          <li class="nav-item">
+            <a href="{{ url('admin/our_team')}}" class="nav-link  @if(Request::segment(2) == 'our_team') active @endif ">
+                <i class="nav-icon fa fa-users" ></i>
+              <p>
+                Our Team
+              </p>
+
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ url('admin/my_account')}}" class="nav-link  @if(Request::segment(2) == 'my_account') active @endif ">
