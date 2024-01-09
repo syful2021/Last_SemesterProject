@@ -106,7 +106,7 @@
 
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Image Two<span style="color: red"> *</span>
                                     </label>

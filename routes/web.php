@@ -59,6 +59,11 @@ Route::group(['middleware'=> 'admin'], function(){
     Route::get('admin/our_team', [OurTeamController::class, 'our_team_list']);
     Route::post('admin/our_team/post', [OurTeamController::class, 'our_team_post']);
 
+    Route::get('admin/our_team/list/{id}', [OurTeamController::class, 'our_team_position']);
+    Route::get('admin/our_team/add/{id}', [OurTeamController::class, 'our_team_position_add']);
+    Route::post('admin/our_team/add/{id}', [OurTeamController::class, 'our_team_position_add_post']);
+
+
     Route::get('admin/my_account', [MyAccountController::class, 'my_account']);
     Route::post('admin/my_account/update', [MyAccountController::class, 'my_account_update']);
 });
