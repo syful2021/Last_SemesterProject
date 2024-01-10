@@ -194,30 +194,24 @@
     <div class="row">
       <div class="col-md-12">
         <div class="sectioner-header text-center">
+
           <h3> {{ @$getOurTeam[0]->title }} </h3>
           <span class="line"></span>
           <p> {{ @$getOurTeam[0]->description }} </p>
+          
         </div>
         <div class="section-content text-center">
           <div class="row">
-            <div class="col-md-4">
-              <div class="team-detail wow bounce" data-wow-delay="0.2s"> <img src=" {{ url('frontend/images/user1.jpg')}} " class="img-fluid"/>
-                <h4>Nitu Singh</h4>
-                <p>Marketing Specialist</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="team-detail wow bounce" data-wow-delay="0.4s"> <img src=" {{ url('frontend/images/user2.jpg')}} " class="img-fluid"/>
-                <h4>Yogesh Singh</h4>
-                <p>CEO & Founder</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="team-detail wow bounce" data-wow-delay="0.6s"> <img src=" {{ url('frontend/images/user3.jpg')}} " class="img-fluid"/>
-                <h4>Nisha Sharma</h4>
-                <p>Web Developer</p>
-              </div>
-            </div>
+
+            @foreach ($getPosition as $value)
+                <div class="col-md-4">
+                    <div class="team-detail wow bounce" data-wow-delay="0.2s"> <img src=" {{ url('public/our_team/'.$value->image)}} " class="img-fluid"/>
+                    <h4> {{ $value->name}} </h4>
+                    <p> {{ $value->position_name}} </p>
+                    </div>
+                </div>
+            @endforeach
+
           </div>
         </div>
       </div>

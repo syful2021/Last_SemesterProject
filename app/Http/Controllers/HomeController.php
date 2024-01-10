@@ -8,6 +8,7 @@ use App\Models\WatchNowModel;
 use App\Http\Controllers\Controller;
 use App\Models\FeaturesModel;
 use App\Models\OurTeamModel;
+use App\Models\PositionModel;
 use Illuminate\Http\Request;
 use Str;
 
@@ -22,6 +23,7 @@ class HomeController extends Controller
         $data['getWatchNow'] = WatchNowModel::all();
         $data['getFeatures'] = FeaturesModel::all();
         $data['getOurTeam'] = OurTeamModel::all();
+        $data['getPosition'] = PositionModel::all();
 
        return view('index', $data);
     }
