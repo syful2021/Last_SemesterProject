@@ -66,8 +66,10 @@ Route::group(['middleware'=> 'admin'], function(){
     // Edit position
     Route::get('admin/our_team/edit/{id}', [OurTeamController::class, 'our_team_position_edit']);
     Route::post('admin/our_team/edit/{id}', [OurTeamController::class, 'our_team_position_edit_update']);
+    Route::get('admin/our_team/delete/{id}', [OurTeamController::class, 'our_team_position_delete']);
 
 
+    // My Account
     Route::get('admin/my_account', [MyAccountController::class, 'my_account']);
     Route::post('admin/my_account/update', [MyAccountController::class, 'my_account_update']);
 });

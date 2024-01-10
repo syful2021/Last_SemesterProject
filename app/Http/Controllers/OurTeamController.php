@@ -99,7 +99,7 @@ class OurTeamController extends Controller
     public function our_team_position_edit_update($id, Request $request)
     {
         $insertRecord = PositionModel::find($id);
-        
+
         $insertRecord->name             = trim($request->name);
         $insertRecord->position_name    = trim($request->position_name);
 
@@ -120,6 +120,20 @@ class OurTeamController extends Controller
 
          return redirect('admin/our_team/list/'.$insertRecord->our_team_id )->with('success', 'Position Update successfully saved!' );
 
+    }
+    // Delete
+
+    public function our_team_position_delete($id)
+    {
+        $insertRecord = PositionModel::find($id);
+        if(!empty($insertRecord->image) && file_exists('public/our_team/'.$insertRecord->image))
+        {
+            unlink('public/our_team/'.$insertRecord->image);
+        }
+
+        $insertRecord->delete();
+
+        return redirect()->back()->with('error', 'position successfully Deleted!');
     }
 
 }

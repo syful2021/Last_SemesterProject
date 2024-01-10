@@ -53,6 +53,8 @@
                                             <td>{{ $value->position_name}}</td>
                                             <td>
                                                 <a href="{{ url('admin/our_team/edit/'.$value->id) }}" class="btn btn-primary"> Edit </a>
+
+                                                <a onclick="return confirm('Are you want to delete?')" href="{{ url('admin/our_team/delete/'.$value->id) }}" class="btn btn-danger"> Delete </a>
                                             </td>
                                         </tr>
                                         @endforeach
