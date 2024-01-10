@@ -26,7 +26,42 @@
                 @include('_message')
 
                 <a href="{{ url('admin/our_team/add/'.$getId) }} " class="btn btn-primary"> Add Position </a>
-                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Position Name</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($getRecord as $value )
+                                        <tr>
+                                            <td>{{ $value->id}}</td>
+                                            <td>
+                                                @if(!empty($value->image))
+                                                    <img src=" {{ url('public/our_team/'.$value->image) }}" style="height: 80px; width: 80px;" >
+                                                @endif
+                                            </td>
+                                            <td> {{ $value->name}} </td>
+                                            <td>{{ $value->position_name}}</td>
+                                            <td>
+                                                <a href="{{ url('admin/our_team/edit/'.$value->id) }}" class="btn btn-primary"> Edit </a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

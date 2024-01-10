@@ -27,24 +27,27 @@
                     <div class="col-md-12">
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"> Add Position Our Team </h3>
+                                <h3 class="card-title"> Edit Position Our Team </h3>
                             </div>
-                            {{-- form --}}
-                            <form class="form-horizontal" action="{{ url('admin/our_team/add/{id}') }}" method="post"
+
+                 {{-- form --}}
+                            <form class="form-horizontal" action="" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="card-body">
 
-                                    <input type="hidden" name="our_team_id" value="{{ $getId }}">
 
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label"> Image <span style="color: red"> *</span>
                                         </label>
 
                                         <div class="col-sm-10">
-                                            <input type="file" name="image" class="form-control">
+                                            <input type="file" name="image" class="form-control" >
+                                            @if ($getRecord->image)
+                                                <img src="{{ url('public/our_team/'.$getRecord->image) }}" width="100" height="100" >
 
+                                            @endif
                                         </div>
                                     </div>
 
@@ -54,7 +57,7 @@
 
                                         <div class="col-sm-10">
                                             <input type="text" name="name" class="form-control"
-                                                placeholder="Enter Name" value="{{ old('name') }}" required>
+                                                placeholder="Enter Name" value="{{ $getRecord->name }}" required>
 
                                             <span style="color: red;"> {{ $errors->first('name') }} </span>
 
@@ -68,7 +71,7 @@
 
                                         <div class="col-sm-10">
                                             <input type="text" name="position_name" class="form-control"
-                                                placeholder="Enter Position Name" value="{{ old('position_name') }}"
+                                                placeholder="Enter Position Name" value="{{ $getRecord->position_name }}"
                                                 required>
 
                                             <span style="color: red;"> {{ $errors->first('position_name') }} </span>
@@ -77,7 +80,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary"> Submit </button>
+                                    <button type="submit" class="btn btn-primary"> Update </button>
                                     <a href="" class="btn btn-default float-right"> Cancel</a>
                                 </div>
 

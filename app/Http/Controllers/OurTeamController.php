@@ -75,10 +75,6 @@ class OurTeamController extends Controller
 
         if(!empty($request->file('image')))
          {
-            // if(!empty($save->image) && file_exists('public/features/'.$save->image))
-            //     {
-            //         unlink('public/features/'.$save->image);
-            //     }
 
             $file = $request->file('image');
             $randomStr = Str::random(30);
@@ -89,6 +85,40 @@ class OurTeamController extends Controller
          $insertRecord->save();
 
          return redirect('admin/our_team/list/'.$request->our_team_id )->with('success', 'Position add successfully save' );
+
+    }
+    //  Edit part
+
+    public function our_team_position_edit($id, Request $request)
+    {
+
+        $data['getRecord'] = PositionModel::find($id);
+        return view('admin.our_team.our_team_position_edit', $data);
+    }
+
+    public function our_team_position_edit_update($id, Request $request)
+    {
+        $insertRecord = PositionModel::find($id);
+        
+        $insertRecord->name             = trim($request->name);
+        $insertRecord->position_name    = trim($request->position_name);
+
+        if(!empty($request->file('image')))
+         {
+            if(!empty($insertRecord->image) && file_exists('public/our_team/'.$insertRecord->image))
+                {
+                    unlink('public/our_team/'.$insertRecord->image);
+                }
+
+            $file = $request->file('image');
+            $randomStr = Str::random(30);
+            $filename = $randomStr.'.'.$file->getClientOriginalExtension();
+            $file->move('public/our_team/',$filename);
+            $insertRecord->image = $filename;
+         }
+         $insertRecord->save();
+
+         return redirect('admin/our_team/list/'.$insertRecord->our_team_id )->with('success', 'Position Update successfully saved!' );
 
     }
 
