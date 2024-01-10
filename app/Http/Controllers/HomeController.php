@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\FeaturesModel;
 use App\Models\OurTeamModel;
 use App\Models\PositionModel;
+use App\Models\TestimonialsModel;
 use Illuminate\Http\Request;
 use Str;
 
@@ -24,6 +25,7 @@ class HomeController extends Controller
         $data['getFeatures'] = FeaturesModel::all();
         $data['getOurTeam'] = OurTeamModel::all();
         $data['getPosition'] = PositionModel::all();
+        $data['getTestimonials'] = TestimonialsModel::all();
 
        return view('index', $data);
     }

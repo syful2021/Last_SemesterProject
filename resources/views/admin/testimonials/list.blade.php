@@ -37,6 +37,8 @@
                             <form class="form-horizontal" action="{{ url('admin/testimonials/post') }}" method="post"  enctype="multipart/form-data">
                                 @csrf
 
+                                <input type="hidden" name="id" value="{{ @$getRecord[0]->id }}">
+
                                 <div class="card-body">
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Title<span style="color: red"> *</span>
@@ -44,7 +46,7 @@
 
                                         <div class="col-sm-10">
                                             <input type="text" name="title" class="form-control"
-                                                placeholder="Enter title" value="" required>
+                                                placeholder="Enter title" value="{{ @$getRecord[0]->title }}" required>
 
                                             <span style="color: red"> {{ $errors->first('title') }} </span>
                                         </div>
@@ -54,8 +56,7 @@
                                         <label class="col-sm-2 col-form-label">Description</label>
 
                                         <div class="col-sm-10">
-                                            <textarea type="text" name="description" class="form-control" placeholder="Enter Descriptin">
-                                                 </textarea>
+                                            <textarea type="text" name="description" class="form-control" placeholder="Enter Descriptin">{{ @$getRecord[0]->description }} </textarea>
                                             <span style="color: red"> {{ $errors->first('description') }} </span>
                                         </div>
                                     </div>
@@ -65,7 +66,13 @@
 
                                 <div class="card-footer">
 
-                                    <button type="submit" class="btn btn-primary" > Add </button>
+                                    <button type="submit" name="add_to_update" class="btn btn-primary" value="@if (count($getRecord) > 0) Update @else Add @endif ">
+                                        @if (count($getRecord) > 0)
+                                            Update
+                                        @else
+                                            Add
+                                        @endif
+                                    </button>
                                     <a href="" class="btn btn-default float-right"> Cancel </a>
                                 </div>
                             </form>

@@ -198,7 +198,7 @@
           <h3> {{ @$getOurTeam[0]->title }} </h3>
           <span class="line"></span>
           <p> {{ @$getOurTeam[0]->description }} </p>
-          
+
         </div>
         <div class="section-content text-center">
           <div class="row">
@@ -227,9 +227,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="sectioner-header text-center white">
-          <h3>Testimonials</h3>
+          <h3> {{ @$getTestimonials[0]->title }} </h3>
           <span class="line"></span>
-          <p class="white">Sed quis nisi nisi. Proin consectetur porttitor dui sit amet viverra. Fusce sit amet lorem faucibus, vestibulum ante in, pharetra ante.</p>
+          <p class="white"> {{ @$getTestimonials[0]->description }} </p>
         </div>
 
       <div class="section-content">
