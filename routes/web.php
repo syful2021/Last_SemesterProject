@@ -10,6 +10,7 @@ use App\Http\Controllers\WatchNowController;
 use App\Http\Controllers\FeaturesController;
 use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\FAQController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,9 @@ Route::group(['middleware'=> 'admin'], function(){
     Route::get('admin/testimonials/edit/{id}', [TestimonialController::class, 'testimonials_edit']);
     Route::post('admin/testimonials/edit/{id}', [TestimonialController::class, 'testimonials_edit_update']);
     Route::get('admin/testimonials/delete/{id}', [TestimonialController::class, 'testimonials_delete']);
+
+    // FAQ
+    Route::get('admin/faq', [FAQController::class, 'faq']);
 
 
 });

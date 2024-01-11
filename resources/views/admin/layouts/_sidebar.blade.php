@@ -136,6 +136,16 @@
             </a>
           </li>
 
+          {{-- Frequently Asked Questions --}}
+          <li class="nav-item">
+            <a href="{{ url('admin/faq')}}" class="nav-link  @if(Request::segment(2) == 'faq') active @endif ">
+                <i class="nav-icon fa fa-question-circle" ></i>
+              <p>
+                FAQ
+              </p>
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ url('admin/my_account')}}" class="nav-link  @if(Request::segment(2) == 'my_account') active @endif ">
