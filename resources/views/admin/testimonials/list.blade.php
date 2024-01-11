@@ -26,11 +26,13 @@
 
                 @include('_message')
 
+                <a href="{{ url('admin/testimonials/list/')}}" class="btn btn-primary" style="margin-bottom: 13px"> Add Testimonials list </a>
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"> Testimonials </h3>
+                                <h3 class="card-title"> Testimonials Page </h3>
                             </div>
 
                     {{-- form --}}

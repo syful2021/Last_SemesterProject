@@ -76,6 +76,12 @@ Route::group(['middleware'=> 'admin'], function(){
     // Testimonials
     Route::get('admin/testimonials', [TestimonialController::class, 'testimonials_list']);
     Route::post('admin/testimonials/post', [TestimonialController::class, 'testimonials_post']);
+    Route::get('admin/testimonials/list', [TestimonialController::class, 'add_testimonials_list']);
+    Route::get('admin/testimonials/add', [TestimonialController::class, 'testimonials_add']);
+    Route::post('admin/testimonials/add', [TestimonialController::class, 'testimonials_add_post']);
+    Route::get('admin/testimonials/edit/{id}', [TestimonialController::class, 'testimonials_edit']);
+    Route::post('admin/testimonials/edit/{id}', [TestimonialController::class, 'testimonials_edit_update']);
+    Route::get('admin/testimonials/delete/{id}', [TestimonialController::class, 'testimonials_delete']);
 
 
 });

@@ -236,18 +236,18 @@
         <div class="row">
           <div class="offset-md-2 col-md-8 col-sm-12">
             <div class="slider">
-              <div class="slider-item">
-                <div class="test-img"><img src=" {{ url('frontend/images/user1.jpg')}} " alt="Placeholder" width="157" height="157"></div>
-                <div class="test-text"><span class="title"><span>John Michal</span> Digital Designer</span> Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam eratvo lutpat.</div>
-              </div>
-              <div class="slider-item">
-                <div class="test-img"><img src=" {{ url('frontend/images/user3.jpg')}} " alt="Placeholder" width="157" height="157"></div>
-                <div class="test-text"><span class="title"><span>Steve Smith</span> App User</span> Euismod tincidunt ut laoreet dolore magna aliquam eratvo lutpat. Ut wisi enim ad minim veniam, quis nostrud v</div>
-              </div>
-              <div class="slider-item">
-                <div class="test-img"><img src=" {{ url('frontend/images/user3.jpg')}} " alt="Placeholder" width="157" height="157"></div>
-                <div class="test-text"><span class="title"><span>Gordon Shaw</span> Blogger</span> Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam eratvo lutpat. Ut wisi enim ad minim veniam, quis nostrud v</div>
-              </div>
+
+
+                @foreach ($getTestimonialsDetails as $value_t )
+
+                    <div class="slider-item">
+                        <div class="test-img"><img src=" {{ url('public/testimonials/'.$value_t->image )}} " alt="Placeholder" width="157" height="157"></div>
+                        <div class="test-text"><span class="title"><span> {{ $value_t->name}} </span> {{ $value_t->position_name}} </span> {{ $value_t->description}} </div>
+                    </div>
+                    
+                @endforeach
+
+
             </div>
           </div>
         </div>
