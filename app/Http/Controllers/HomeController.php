@@ -12,6 +12,7 @@ use App\Models\PositionModel;
 use App\Models\TestimonialsModel;
 use App\Models\TestimonialsDetailsModel;
 use App\Models\FaqModel;
+use App\Models\FaqDetailsModel;
 use Illuminate\Http\Request;
 use Str;
 
@@ -30,6 +31,8 @@ class HomeController extends Controller
         $data['getTestimonials'] = TestimonialsModel::all();
         $data['getTestimonialsDetails'] = TestimonialsDetailsModel::get();
         $data['getFaq'] = FaqModel::all();
+        $data['getFaqDetails'] = FaqDetailsModel::get();
+        
        return view('index', $data);
     }
 
