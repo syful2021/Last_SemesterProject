@@ -86,6 +86,10 @@ Route::group(['middleware'=> 'admin'], function(){
 
     // FAQ
     Route::get('admin/faq', [FAQController::class, 'faq']);
+    Route::post('admin/faq/post', [FAQController::class, 'faq_post']);
+    Route::get('admin/faq/list', [FAQController::class, 'faq_list']);
+    Route::get('admin/faq/add', [FAQController::class, 'faq_add']);
+    Route::post('admin/faq/add', [FAQController::class, 'faq_add_post']);
 
 
 });

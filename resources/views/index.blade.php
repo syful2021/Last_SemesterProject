@@ -244,7 +244,7 @@
                         <div class="test-img"><img src=" {{ url('public/testimonials/'.$value_t->image )}} " alt="Placeholder" width="157" height="157"></div>
                         <div class="test-text"><span class="title"><span> {{ $value_t->name}} </span> {{ $value_t->position_name}} </span> {{ $value_t->description}} </div>
                     </div>
-                    
+
                 @endforeach
 
 
@@ -265,9 +265,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="sectioner-header text-center">
-          <h3>Frequently Asked Questions</h3>
+          <h3> {{ @$getFaq[0]->title }} </h3>
           <span class="line"></span>
-          <p>Sed quis nisi nisi. Proin consectetur porttitor dui sit amet viverra. Fusce sit amet lorem faucibus, vestibulum ante in, pharetra ante.</p>
+          <p> {{ @$getFaq[0]->description }} </p>
         </div>
         <div class="section-content">
           <div class="row">
