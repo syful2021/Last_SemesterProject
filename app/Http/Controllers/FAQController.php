@@ -58,5 +58,22 @@ class FAQController extends Controller
         return redirect('admin/faq/list')->with('success', 'FAQ successfully saved!' );
 
     }
+    //FAQ Edit
+    public function faq_edit($id, Request $request)
+    {
+        $data['getRecord'] = FaqDetailsModel::find($id);
+        return view('admin.faq.faq_edit', $data);
+    }
+
+    public function faq_edit_update($id, Request $request)
+    {
+        $save = FaqDetailsModel::find($id);
+
+        $save->title             = trim($request->title);
+        $save->description      = trim($request->description);
+        $save->save();
+
+        return redirect('admin/faq/list')->with('success', 'FAQ successfully Updated!' );
+    }
 
 }
