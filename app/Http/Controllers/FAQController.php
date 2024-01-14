@@ -76,4 +76,12 @@ class FAQController extends Controller
         return redirect('admin/faq/list')->with('success', 'FAQ successfully Updated!' );
     }
 
+    public function faq_delete($id, Request $request)
+    {
+        $deleteRecord = FaqDetailsModel::find($id);
+        $deleteRecord->delete();
+
+        return redirect('admin/faq/list')->with('error', 'FAQ successfully Deleted!');
+    }
+
 }

@@ -93,6 +93,7 @@ Route::group(['middleware'=> 'admin'], function(){
     //faq_edit
     Route::get('admin/faq/edit/{id}', [FAQController::class, 'faq_edit']);
     Route::post('admin/faq/edit/{id}', [FAQController::class, 'faq_edit_update']);
+    Route::get('admin/faq/delete/{id}', [FAQController::class, 'faq_delete']);
 
 
 });
