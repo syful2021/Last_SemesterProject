@@ -146,6 +146,16 @@
             </a>
           </li>
 
+          {{-- Contact us --}}
+          <li class="nav-item">
+            <a href="{{ url('admin/contact')}}" class="nav-link  @if(Request::segment(2) == 'contact') active @endif ">
+                <i class="nav-icon fa fa-address-book" ></i>
+              <p>
+                Contact
+              </p>
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ url('admin/my_account')}}" class="nav-link  @if(Request::segment(2) == 'my_account') active @endif ">

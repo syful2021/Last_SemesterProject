@@ -13,6 +13,7 @@ use App\Models\TestimonialsModel;
 use App\Models\TestimonialsDetailsModel;
 use App\Models\FaqModel;
 use App\Models\FaqDetailsModel;
+use App\Models\ContactModel;
 use Illuminate\Http\Request;
 use Str;
 
@@ -32,7 +33,8 @@ class HomeController extends Controller
         $data['getTestimonialsDetails'] = TestimonialsDetailsModel::get();
         $data['getFaq'] = FaqModel::all();
         $data['getFaqDetails'] = FaqDetailsModel::get();
-        
+        $data['getContact'] = ContactModel::all();
+
        return view('index', $data);
     }
 

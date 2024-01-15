@@ -11,6 +11,7 @@ use App\Http\Controllers\FeaturesController;
 use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +95,10 @@ Route::group(['middleware'=> 'admin'], function(){
     Route::get('admin/faq/edit/{id}', [FAQController::class, 'faq_edit']);
     Route::post('admin/faq/edit/{id}', [FAQController::class, 'faq_edit_update']);
     Route::get('admin/faq/delete/{id}', [FAQController::class, 'faq_delete']);
+
+    // Contact Us
+    Route::get('admin/contact', [ContactController::class, 'admin_contact']);
+    Route::post('admin/contact/post', [ContactController::class, 'contact_post']);
 
 
 });

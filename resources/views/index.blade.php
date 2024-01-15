@@ -297,10 +297,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="sectioner-header text-center">
-          <h3>Contact us</h3>
+          <h3> {{ @$getContact[0]->title }} </h3>
           <span class="line"></span>
-          <p>Sed quis nisi nisi. Proin consectetur porttitor dui sit amet viverra. Fusce sit amet lorem faucibus, vestibulum ante in, pharetra ante.</p>
-        </div>
+          <p> {{ @$getContact[0]->description }} </div>
         <div class="section-content">
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8">
