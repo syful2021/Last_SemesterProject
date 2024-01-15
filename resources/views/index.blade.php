@@ -317,30 +317,31 @@
                 <button class="btn-grad w-100 text-uppercase" type="submit" name="button">submit</button>
               </form>
             </div>
+
             <div class="col-sm-12 col-md-12 col-lg-4">
               <div class="contact-info white">
                 <div class="contact-item media"> <i class="fa fa-map-marker-alt media-left media-right-margin"></i>
                   <div class="media-body">
-                    <p class="text-uppercase">Address</p>
-                    <p class="text-uppercase">New Delhi, India</p>
+                    <p class="text-uppercase"> {{ @$getContact[0]->address1 }} </p>
+                    <p class="text-uppercase"> {{ @$getContact[0]->address2 }} </p>
                   </div>
                 </div>
                 <div class="contact-item media"> <i class="fa fa-mobile media-left media-right-margin"></i>
                   <div class="media-body">
-                    <p class="text-uppercase">Phone</p>
-                    <p class="text-uppercase"><a class="text-white" href="tel:+15173977100">009900990099</a> </p>
+                    <p class="text-uppercase"> {{ @$getContact[0]->phone1 }} </p>
+                    <p class="text-uppercase"><a class="text-white" href="tel:+15173977100"> {{ @$getContact[0]->phone2 }} </a> </p>
                   </div>
                 </div>
                 <div class="contact-item media"> <i class="fa fa-envelope media-left media-right-margin"></i>
                   <div class="media-body">
-                    <p class="text-uppercase">E-mail</p>
-                    <p class="text-uppercase"><a class="text-white" href="mailto:abcdefg@gmail.com">yogeshsingh.now@gmail.com</a> </p>
+                    <p class="text-uppercase"> {{ @$getContact[0]->email1 }}  </p>
+                    <p class="text-lowercase"><a class="text-white" href="mailto:abcdefg@gmail.com"> {{ @$getContact[0]->email2 }}  </a> </p>
                   </div>
                 </div>
                 <div class="contact-item media"> <i class="fa fa-clock media-left media-right-margin"></i>
                   <div class="media-body">
-                    <p class="text-uppercase">Working Hours</p>
-                    <p class="text-uppercase">Mon-Fri 9.00 AM to 5.00PM.</p>
+                    <p class="text-uppercase"> {{ @$getContact[0]->working1 }}  </p>
+                    <p class="text-uppercase"> {{ @$getContact[0]->working2 }}  </p>
                   </div>
                 </div>
               </div>
